@@ -68,8 +68,8 @@ func (a *API) invokeHook(ctx context.Context, input, output any) error {
 			}
 
 			httpError := &HTTPError{
-				Code:    httpCode,
-				Message: hookOutput.HookError.Message,
+				HTTPStatus: httpCode,
+				Message:    hookOutput.HookError.Message,
 			}
 
 			return httpError.WithInternalError(&hookOutput.HookError)
@@ -94,8 +94,8 @@ func (a *API) invokeHook(ctx context.Context, input, output any) error {
 			}
 
 			httpError := &HTTPError{
-				Code:    httpCode,
-				Message: hookOutput.HookError.Message,
+				HTTPStatus: httpCode,
+				Message:    hookOutput.HookError.Message,
 			}
 
 			return httpError.WithInternalError(&hookOutput.HookError)
@@ -120,8 +120,8 @@ func (a *API) invokeHook(ctx context.Context, input, output any) error {
 			}
 
 			httpError := &HTTPError{
-				Code:    httpCode,
-				Message: hookOutput.HookError.Message,
+				HTTPStatus: httpCode,
+				Message:    hookOutput.HookError.Message,
 			}
 
 			return httpError.WithInternalError(&hookOutput.HookError)
@@ -134,8 +134,8 @@ func (a *API) invokeHook(ctx context.Context, input, output any) error {
 			}
 
 			httpError := &HTTPError{
-				Code:    httpCode,
-				Message: err.Error(),
+				HTTPStatus: httpCode,
+				Message:    err.Error(),
 			}
 
 			return httpError
