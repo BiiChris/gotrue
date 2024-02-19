@@ -256,13 +256,7 @@ func (a *API) PKCE(ctx context.Context, w http.ResponseWriter, r *http.Request) 
 		return err
 	}
 
-	flowStateExpiryDuration := a.config.External.FlowStateExpiryDuration
-	if flowState.AuthenticationMethod == models.MagicLink.String() {
-		// We allow 3 times the duration for magic links
-		flowStateExpiryDuration *= 3
-	}
-
-	if flowState.IsExpired(flowStateExpiryDuration) {
+	if flowState.IsExpired(a.config.External.FlowStateExpiryDuration) {
 		return forbiddenError("invalid flow state, flow state has expired")
 	}
 

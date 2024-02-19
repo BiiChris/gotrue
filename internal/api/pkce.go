@@ -44,6 +44,11 @@ func issueAuthCode(tx *storage.Connection, user *models.User, authenticationMeth
 	} else if err != nil {
 		return "", err
 	}
+	// No op action to mark that auth code has been issued
+	if err := tx.Update(flowState); err != nil {
+		return "", err
+	}
+
 	return flowState.AuthCode, nil
 }
 
