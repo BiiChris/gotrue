@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.144.0](https://github.com/supabase/gotrue/compare/v2.143.0...v2.144.0) (2024-02-19)
+
+
+### Features
+
+* add configuration for custom sms sender hook ([#1428](https://github.com/supabase/gotrue/issues/1428)) ([1ea56b6](https://github.com/supabase/gotrue/commit/1ea56b62d47edb0766d9e445406ecb43d387d920))
+
 ## [2.143.0](https://github.com/supabase/gotrue/compare/v2.142.0...v2.143.0) (2024-02-19)
 
 
