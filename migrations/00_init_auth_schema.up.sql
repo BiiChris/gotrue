@@ -82,7 +82,7 @@ create or replace function {{ index .Options "Namespace" }}.uid() returns uuid a
   select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid;
 $$ language sql stable;
 
--- Gets the User ID from the request cookie
+-- Gets the User Role from the request cookie
 create or replace function {{ index .Options "Namespace" }}.role() returns text as $$
   select nullif(current_setting('request.jwt.claim.role', true), '')::text;
 $$ language sql stable;
